@@ -65,7 +65,7 @@ endif ()
 set(LIBCAESIUM_SOURCE_DIR ${CMAKE_BINARY_DIR}/libcaesium-prefix/src/libcaesium)
 string(TOLOWER ${CMAKE_BUILD_TYPE} LIBCAESIUM_BUILD_TYPE)
 if (WIN32)
-    link_directories(${LIBCAESIUM_SOURCE_DIR}/target/x86_64-pc-windows-gnu/${LIBCAESIUM_BUILD_TYPE})
+    link_directories(${LIBCAESIUM_SOURCE_DIR}/target/x86_64-pc-windows-msvc/${LIBCAESIUM_BUILD_TYPE})
 else ()
     link_directories(${LIBCAESIUM_SOURCE_DIR}/target/${LIBCAESIUM_BUILD_TYPE})
 endif ()
@@ -177,7 +177,7 @@ endif ()
 
 set(CARGO_TARGET "")
 if (WIN32)
-    set(CARGO_TARGET "--target=x86_64-pc-windows-gnu")
+    set(CARGO_TARGET "--target=x86_64-pc-windows-msvc")
 endif ()
 
 ExternalProject_Add(
